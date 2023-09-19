@@ -1,84 +1,83 @@
 {
-  "name": "weather",
-  "displayName": "weather",
-  "description": "天气小插件，支持全球城市",
-  "version": "1.1.0",
-  "engines": {
-    "vscode": "^1.48.0"
-  },
-  "publisher": "chendm",
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onStartupFinished"
-  ],
-  "icon": "images/logo.png",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:chendonming/weather.git"
-  },
-  "main": "./extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "extension.weather",
-        "title": "Weather天气更新/查看"
-      },
-      {
-        "command": "extension.replacecity",
-        "title": "Replacecity更换城市"
-      }
+    "name": "weather-fork",
+    "displayName": "weather-fork",
+    "description": "",
+    "version": "1.2.0",
+    "engines": {
+        "vscode": "^1.48.0"
+    },
+    "publisher": "FUTURETECH6",
+    "categories": [
+        "Other"
     ],
-    "configuration": [
-      {
-        "title": "weather天气插件",
-        "properties": {
-          "weather.key": {
-            "type": "string",
-            "default": "579fbf44a7b24519a9d50e35258c1467",
-            "description": "输入您的和风天气key密钥享受更多API调用次数, 天气插件是全局插件因此改动后需要重启"
-          },
-          "weather.position": {
-            "type": "string",
-            "default": "left",
-            "enum": [
-              "left",
-              "right"
-            ],
-            "description": "改变插件的显示位置, 天气插件是全局插件因此改动后需要重启"
-          },
-          "weather.updateInterval": {
-            "type": "integer",
-            "default": 120,
-            "description": "自动更新天气的定时, 天气插件是全局插件因此改动后需要重启"
-          },
-          "weather.showLifeIndex": {
-            "type": "boolean",
-            "default": true,
-            "description": "开启后显示生活指数, 天气插件是全局插件因此改动后需要重启"
-          }
-        }
-      }
-    ]
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "pretest": "yarn run lint",
-    "test": "node ./test/runTest.js"
-  },
-  "devDependencies": {
-    "@types/glob": "^7.1.1",
-    "@types/mocha": "^7.0.1",
-    "@types/node": "^12.11.7",
-    "@types/vscode": "^1.48.0",
-    "eslint": "^6.8.0",
-    "glob": "^7.1.6",
-    "mocha": "^7.0.1",
-    "typescript": "^3.7.5",
-    "vscode-test": "^1.3.0"
-  },
-  "dependencies": {
-    "axios": "^0.20.0"
-  }
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/futuretech6/weather-vscode"
+    },
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.weather",
+                "title": "Weather天气更新/查看"
+            },
+            {
+                "command": "extension.replacecity",
+                "title": "Replacecity更换城市"
+            }
+        ],
+        "configuration": [
+            {
+                "title": "weather天气插件",
+                "properties": {
+                    "weather.key": {
+                        "type": "string",
+                        "default": "579fbf44a7b24519a9d50e35258c1467",
+                        "description": "输入您的和风天气key密钥享受更多API调用次数, 天气插件是全局插件因此改动后需要重启"
+                    },
+                    "weather.position": {
+                        "type": "string",
+                        "default": "left",
+                        "enum": [
+                            "left",
+                            "right"
+                        ],
+                        "description": "改变插件的显示位置, 天气插件是全局插件因此改动后需要重启"
+                    },
+                    "weather.updateInterval": {
+                        "type": "integer",
+                        "default": 120,
+                        "description": "自动更新天气的定时, 天气插件是全局插件因此改动后需要重启"
+                    },
+                    "weather.showLifeIndex": {
+                        "type": "boolean",
+                        "default": true,
+                        "description": "开启后显示生活指数, 天气插件是全局插件因此改动后需要重启"
+                    }
+                }
+            }
+        ]
+    },
+    "scripts": {
+        "lint": "eslint .",
+        "pretest": "yarn run lint",
+        "test": "node ./test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^7.0.1",
+        "@types/node": "^12.11.7",
+        "@types/vscode": "^1.48.0",
+        "eslint": "^6.8.0",
+        "glob": "^7.1.6",
+        "mocha": "^7.0.1",
+        "typescript": "^3.7.5",
+        "vscode-test": "^1.3.0"
+    },
+    "dependencies": {
+        "axios": "^0.20.0"
+    }
 }
