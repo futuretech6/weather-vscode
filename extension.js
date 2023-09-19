@@ -2,7 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 const weather = require('./weather');
-const AutoUpdate = vscode.workspace.getConfiguration().get('weather.autoUpdate')
+const UpdateInterval = vscode.workspace.getConfiguration().get('weather.updateInterval')
 const ShowLifeIndex = vscode.workspace.getConfiguration().get('weather.showLifeIndex')
 const barPosition = vscode.workspace.getConfiguration().get('weather.position') == "left" ? vscode.StatusBarAlignment.Left : vscode.StatusBarAlignment.Right
 // this method is called when your extension is activated
@@ -84,11 +84,9 @@ function activate(context) {
 
   vscode.commands.executeCommand('extension.weather')
 
-  if (AutoUpdate) {
-    setInterval(function () {
+  setInterval(function () {
       vscode.commands.executeCommand('extension.weather')
-    }, 1000 * 60 * 60 * 2)
-  }
+  }, 1000 * 60 * UpdateInterval)
 
   context.subscriptions.push(replacecity, disposable, addCity)
 }

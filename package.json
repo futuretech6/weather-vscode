@@ -48,10 +48,10 @@
             ],
             "description": "改变插件的显示位置, 天气插件是全局插件因此改动后需要重启"
           },
-          "weather.autoUpdate": {
-            "type": "boolean",
-            "default": true,
-            "description": "开启后每隔两小时自动更新下天气, 天气插件是全局插件因此改动后需要重启"
+          "weather.updateInterval": {
+            "type": "integer",
+            "default": 120,
+            "description": "自动更新天气的定时, 天气插件是全局插件因此改动后需要重启"
           },
           "weather.showLifeIndex": {
             "type": "boolean",
