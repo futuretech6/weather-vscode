@@ -42,7 +42,7 @@ function activate(context) {
                     now.temp +
                     "℃";
                 bar.tooltip = "当前实况";
-                bar.command = "extension.replacecity";
+                bar.command = "extension.replaceCity";
                 bar.show();
 
                 const nextDay = await getForecast(locationId);
@@ -75,8 +75,8 @@ function activate(context) {
     );
 
     // 更换城市
-    let replacecity = vscode.commands.registerCommand(
-        "extension.replacecity",
+    let replaceCity = vscode.commands.registerCommand(
+        "extension.replaceCity",
         async function () {
             const location = await vscode.window.showInputBox({
                 placeHolder: "输入城市名( 中国/全球 )",
@@ -121,7 +121,7 @@ function activate(context) {
         vscode.commands.executeCommand("extension.weather");
     }, 1000 * 60 * UpdateInterval);
 
-    context.subscriptions.push(replacecity, disposable, addCity);
+    context.subscriptions.push(replaceCity, disposable, addCity);
 }
 
 function getNowWeather(locationId) {
